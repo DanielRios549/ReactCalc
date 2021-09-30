@@ -1,3 +1,7 @@
+/*---------------------
+        Header
+---------------------*/
+
 #header {
     background-color: #181818;
     padding: 10px;
@@ -5,6 +9,46 @@
 #header .title {
     text-indent: 10%;
 }
+
+/*---------------------
+         Main
+---------------------*/
+
+.calc {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    padding: 30px;
+    display: flex;
+}
+
+.calc #numbers {
+    align-self: flex-end;
+}
+.calc #numbers .line {
+    margin-bottom: 5px;
+}
+.calc #numbers .line button {
+    border: none;
+    border-radius: 5px;
+    background-color: #181818;
+    color: #d6d6d6;
+    margin-right: 5px;
+    width: 80px;
+    height: 80px;
+    font-size: 30pt;
+
+    transition: background-color 200ms ease;
+}
+.calc #numbers .line button:hover {
+    background-color: #202020;
+}
+
+/*---------------------
+        Footer
+---------------------*/
+
 #footer {
     background-color: #181818;
     position: fixed;
