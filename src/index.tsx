@@ -1,10 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './styles/index.css'
 import Header from './components/parts/header'
 import Footer from './components/parts/footer'
 import Body from './components/parts/body'
-import './styles/App.css'
+import './styles/app.scss'
 
 
 ReactDOM.render(
