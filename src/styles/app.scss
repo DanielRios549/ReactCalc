@@ -15,8 +15,6 @@ body {
     width: 100vw;
     height: 100vh;
 
-    @import './parts/header';
-
     .calc {
         box-sizing: border-box;
         position: relative;
@@ -49,6 +47,4 @@ body {
             }
         }
     }
-
-    @import './parts/footer';
 }
