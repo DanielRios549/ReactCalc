@@ -9,7 +9,7 @@ interface Props {
 export default class Button extends React.Component<Props> {
     render() {
         return(
-            <button id={this.props.name} className="number" data-info={this.props.info}>
+            <button className="number" data-info={this.props.info}>
                 <span>{this.props.text}</span>
             </button>
         )
