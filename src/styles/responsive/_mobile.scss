@@ -1,0 +1,15 @@
+@media (max-width: 619px) {
+    .calc {
+        grid-template-columns: auto;
+        grid-template-rows: 20% auto 70%;
+        grid-template-areas: 
+            "header"
+            "dial"
+            "history"
+        ;
+
+        #numbers {
+            align-items: center;
+        }
+    }
+}

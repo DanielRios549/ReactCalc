@@ -1,0 +1,20 @@
+@media (min-width: 900px) {
+    .calc {
+        max-width: 900px !important;
+        margin: 0 auto;
+    }
+}
+@media (min-width: 620px) {
+    .calc {
+        grid-template-columns: auto 200px;
+        grid-template-rows: 20% 80%;
+        grid-template-areas: 
+            "header header"
+            "dial history"
+        ;
+
+        #numbers {
+            align-items: flex-start;
+        }
+    }
+}

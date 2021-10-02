@@ -1,3 +1,6 @@
+@import '../responsive/desktop';
+@import '../responsive/mobile';
+
 .calc {
     box-sizing: border-box;
     position: relative;
@@ -6,12 +9,6 @@
     padding: 30px;
     display: grid;
     gap: 10px;
-    grid-template-columns: auto 200px;
-    grid-template-rows: 20% 80%;
-    grid-template-areas: 
-        "header header"
-        "dial history"
-    ;
 
     #display,
     #history {
@@ -27,6 +24,8 @@
     }
     #numbers {
         grid-area: dial;
+        display: flex;
+        flex-direction: column;
 
         .line {
             margin-bottom: 5px;
