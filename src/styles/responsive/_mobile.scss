@@ -13,3 +13,17 @@
         }
     }
 }
+@media (max-width: 300px) {
+    .calc {
+        padding: 5px;
+
+        #display {
+            margin-top: 5px;
+        }
+        #numbers {
+            .line button {
+                width: 25%;
+            }
+        }
+    }
+}

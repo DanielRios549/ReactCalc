@@ -1,6 +1,10 @@
+@import './config/colors';
+@import './responsive/desktop';
+@import './responsive/mobile';
+
 body {
-    background-color: #282c34;
-    color: #d6d6d6;
+    background-color: $body;
+    color: $text;
     width: 100vw;
     height: 100vh;
     margin: 0;

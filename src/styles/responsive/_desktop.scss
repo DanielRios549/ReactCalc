@@ -6,6 +6,7 @@
 }
 @media (min-width: 620px) {
     .calc {
+        padding: 30px;
         grid-template-columns: auto 200px;
         grid-template-rows: 20% 80%;
         grid-template-areas: 
