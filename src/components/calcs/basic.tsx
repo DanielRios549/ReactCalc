@@ -2,6 +2,7 @@ import React from 'react'
 import Button from '../elements/button'
 import Display from '../elements/display'
 import History from './common/history'
+import Expression from './common/expressions'
 import '../../styles/calcs/_basic.scss'
 
 
@@ -16,10 +17,12 @@ export default class Basic extends React.Component<{}, History> {
     state = {
         current: ''
     }
-    update = (event: any) => {
-        this.setState({
-            current: `${this.state.current} ${event.currentTarget.getAttribute('data-display')}`,
-        })
+    update = (event: React.MouseEvent) => {
+        let expression = new Expression()
+
+        this.setState(
+            expression.changeDisplay(this.state.current, event)
+        )
     }
     render() {
         return(
