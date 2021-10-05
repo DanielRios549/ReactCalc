@@ -1,7 +1,3 @@
-/* This file is not intended to be a React Component, only a file to make math operations */
-
-import React from "react"
-
 export default class Expression {
     changeDisplay(display: string, event: React.MouseEvent): object {
         let data = event.currentTarget.getAttribute('data-display')
