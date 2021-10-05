@@ -15,13 +15,14 @@ export default class Basic extends React.Component<{}, History> {
         ['.', '0', '=', '-']
     ]
     state = {
-        current: ''
+        current: '',
+        result: false
     }
     update = (event: React.MouseEvent) => {
         let expression = new Expression()
 
         this.setState(
-            expression.changeDisplay(this.state.current, event)
+            expression.changeDisplay(this.state.current, this.state.result, event)
         )
     }
     render() {
