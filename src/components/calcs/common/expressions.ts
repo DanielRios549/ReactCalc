@@ -3,39 +3,35 @@ export default class Expression {
         public display: string,
         public remove: boolean
     ){}
-    changeDisplay = (event: React.MouseEvent):object => {
+    handleButton = (event: React.MouseEvent):object => {
         let data = event.currentTarget.getAttribute('data-display')
         let newState = {}
         let current = ''
         let result = false
 
-        // Erase button
+        // Back button
 
-        if (data === 'C') {
-            if ((this.display.length === 1) || (this.remove !== false)) {
-                current = '0'
-            }
-            else {
-                current = this.display.slice(0, -1)
-            }
+        if (data === '←') {
+            current = this.backSpace()
+        }
+
+        // Clear button
+
+        else if (data == 'C') {
+            current = '0'
         }
 
         // Equal button
 
         else if (data === '=') {
-            current = eval(this.display).toString()
+            current = this.resolve()
             result = true
         }
 
         // Expression buttons
 
         else {
-            if (this.display === '0') {
-                current = `${data}`
-            }
-            else {
-                current = `${this.display}${data}`
-            }
+            current = this.show(data)
         }
         
 
@@ -45,5 +41,24 @@ export default class Expression {
         }
 
         return newState
+    }
+    backSpace = () => {
+        if ((this.display.length === 1) || (this.remove !== false)) {
+            return '0'
+        }
+        else {
+            return this.display.slice(0, -1)
+        }
+    }
+    show = (text: string | null) => {
+        if (this.display === '0') {
+            return `${text}`
+        }
+        else {
+            return `${this.display}${text}`
+        }
+    }
+    resolve = () => {
+        return eval(this.display).toString()
     }
 }

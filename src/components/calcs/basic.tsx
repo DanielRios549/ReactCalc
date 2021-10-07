@@ -1,14 +1,15 @@
 import React from 'react'
 import Button from '../elements/button'
 import Display from '../elements/display'
-import History from './common/history'
+import IHistory from './common/history'
 import Expression from './common/expressions'
 import '../../styles/components/calcs/basic.scss'
+import History from '../elements/history'
 
 
-export default class Basic extends React.Component<{}, History> {
+export default class Basic extends React.Component<{}, IHistory> {
     dial = [
-        ['(', ')', '%', 'C'],
+        ['(', ')', '←', 'C'],
         ['1', '2', '3', '*'],
         ['4', '5', '6', '/'],
         ['7', '8', '9', '+'],
@@ -22,7 +23,7 @@ export default class Basic extends React.Component<{}, History> {
         let expression = new Expression(this.state.current, this.state.result)
 
         this.setState(
-            expression.changeDisplay(event)
+            expression.handleButton(event)
         )
     }
     render() {
@@ -41,9 +42,7 @@ export default class Basic extends React.Component<{}, History> {
                     ))
                 }
                 </section>
-                <aside id="history">
-                    <div id="operations"></div>
-                </aside>
+                <History />
             </main>
         )
     }
