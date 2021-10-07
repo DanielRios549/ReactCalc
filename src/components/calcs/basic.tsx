@@ -3,7 +3,7 @@ import Button from '../elements/button'
 import Display from '../elements/display'
 import History from './common/history'
 import Expression from './common/expressions'
-import '../../styles/calcs/_basic.scss'
+import '../../styles/components/calcs/basic.scss'
 
 
 export default class Basic extends React.Component<{}, History> {
@@ -19,10 +19,10 @@ export default class Basic extends React.Component<{}, History> {
         result: false
     }
     update = (event: React.MouseEvent) => {
-        let expression = new Expression()
+        let expression = new Expression(this.state.current, this.state.result)
 
         this.setState(
-            expression.changeDisplay(this.state.current, this.state.result, event)
+            expression.changeDisplay(event)
         )
     }
     render() {
