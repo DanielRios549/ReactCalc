@@ -1,12 +1,12 @@
 import React from 'react'
-import History from '../calcs/common/history'
+import State from '../calcs/common/state'
 
 interface Props {
     show: string
 }
 
 
-export default class Display extends React.Component<Props, History> {
+export default class Display extends React.Component<Props, State> {
     current() {
         if (this.props.show !== '') {
             return this.props.show

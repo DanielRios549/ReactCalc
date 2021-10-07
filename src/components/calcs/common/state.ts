@@ -1,4 +1,4 @@
-export default interface History {
+export default interface State {
     current: string
     result: boolean
     history?: {}

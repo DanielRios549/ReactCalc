@@ -1,13 +1,13 @@
 import React from 'react'
 import Button from '../elements/button'
 import Display from '../elements/display'
-import IHistory from './common/history'
+import History from '../elements/history'
+import State from './common/state'
 import Expression from './common/expressions'
 import '../../styles/components/calcs/basic.scss'
-import History from '../elements/history'
 
 
-export default class Basic extends React.Component<{}, IHistory> {
+export default class Basic extends React.Component<{}, State> {
     dial = [
         ['(', ')', '←', 'C'],
         ['1', '2', '3', '*'],
