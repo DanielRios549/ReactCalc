@@ -21,11 +21,7 @@ export default class Basic extends React.Component<{}, State> {
         history: []
     }
     update = (event: React.MouseEvent) => {
-        let expression = new Expression(
-            this.state.current,
-            this.state.result,
-            this.state.history
-        )
+        let expression = new Expression(this.state)
 
         this.setState(
             expression.handleButton(event)

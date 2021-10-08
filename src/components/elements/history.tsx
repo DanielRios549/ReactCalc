@@ -12,7 +12,7 @@ export default class History extends React.Component<Props> {
             <aside id="history">
                 <ul id="operations">{
                     this.props.list.map((item, index) => (
-                        <li id={`${index}`} className="item">{
+                        <li key={index} id={`${index}`} className="item">{
                             item
                         }
                         </li>
