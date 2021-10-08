@@ -1,7 +1,10 @@
-export default class Expression {
+import State from '../common/state'
+
+export default class Expression implements State {
     constructor(
-        public display: string,
-        public remove: boolean
+        public current: string,
+        public result: boolean,
+        public history: string[],
     ){}
     handleButton = (event: React.MouseEvent):object => {
         let data = event.currentTarget.getAttribute('data-display')
@@ -17,7 +20,7 @@ export default class Expression {
 
         // Clear button
 
-        else if (data == 'C') {
+        else if (data === 'C') {
             current = '0'
         }
 
@@ -26,6 +29,7 @@ export default class Expression {
         else if (data === '=') {
             current = this.resolve()
             result = true
+            this.history.push(this.current)
         }
 
         // Expression buttons
@@ -37,28 +41,30 @@ export default class Expression {
 
         newState = {
             current: current,
-            result: result
+            result: result,
+            history: this.history
         }
 
         return newState
     }
     backSpace = () => {
-        if ((this.display.length === 1) || (this.remove !== false)) {
+        if ((this.current.length === 1) || (this.result !== false)) {
             return '0'
         }
         else {
-            return this.display.slice(0, -1)
+            return this.current.slice(0, -1)
         }
     }
     show = (text: string | null) => {
-        if (this.display === '0') {
+        if (this.current === '0') {
             return `${text}`
         }
         else {
-            return `${this.display}${text}`
+            return `${this.current}${text}`
         }
     }
     resolve = () => {
-        return eval(this.display).toString()
+        let run = eval
+        return run(this.current).toString()
     }
 }

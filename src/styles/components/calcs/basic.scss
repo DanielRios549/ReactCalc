@@ -1,7 +1,6 @@
 @import '../../config/colors';
 
 .calc {
-    box-sizing: border-box;
     position: relative;
     top: 70px;
     width: 100%;
@@ -29,6 +28,13 @@
     }
     #history {
         grid-area: history;
+        padding: 10px;
+
+        .item {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
     }
     #numbers {
         grid-area: dial;

@@ -1,11 +1,24 @@
 import React from 'react'
 
 
-export default class History extends React.Component {
+interface Props {
+    list: string[]
+}
+
+
+export default class History extends React.Component<Props> {
     render() {
         return(
             <aside id="history">
-                <div id="operations"></div>
+                <ul id="operations">{
+                    this.props.list.map((item, index) => (
+                        <li id={`${index}`} className="item">{
+                            item
+                        }
+                        </li>
+                    ))
+                }
+                </ul>
             </aside>
         )
     }
