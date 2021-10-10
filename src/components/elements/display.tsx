@@ -1,13 +1,13 @@
 import React from 'react'
-import State from '../calcs/common/state'
+
 
 interface Props {
     show: string
 }
 
 
-export default class Display extends React.Component<Props, State> {
-    current() {
+export default class Display extends React.Component<Props> {
+    current = () => {
         if (this.props.show !== '') {
             return this.props.show
         }

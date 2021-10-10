@@ -1,5 +1,4 @@
 import React from 'react'
-import State from '../calcs/common/state'
 
 interface Props {
     name: string
@@ -8,7 +7,7 @@ interface Props {
     onClick: any
 }
 
-export default class Button extends React.Component<Props, State> {
+export default class Button extends React.PureComponent<Props> {
     render() {
         return(
             <button onClick={this.props.onClick} className={this.props.name} data-info={this.props.info} data-display={this.props.text}>
