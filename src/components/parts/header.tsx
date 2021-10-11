@@ -6,7 +6,10 @@ export default class Header extends React.Component {
   render () {
         return (
             <header id="header">
-                <h1 className="title">Calculator</h1>
+                <section id="container">
+                    <h1 id="title">Calculator</h1>
+                    <a id="github" href="https://github.com/DanielRios549/ReactCalc">Fork Me</a>
+                </section>
             </header>
         )
   }
