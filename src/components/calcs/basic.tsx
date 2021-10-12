@@ -18,7 +18,7 @@ export default class Basic extends React.Component<{}, State> {
     state = {
         current: '',
         result: false,
-        history: []
+        history: undefined
     }
     update = (event: React.MouseEvent) => {
         let expression = new Expression(this.state)
@@ -43,7 +43,7 @@ export default class Basic extends React.Component<{}, State> {
                     ))
                 }
                 </section>
-                <History list={this.state.history}/>
+                <History item={this.state.history} />
             </main>
         )
     }

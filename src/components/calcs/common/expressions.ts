@@ -9,6 +9,7 @@ export default class Expression {
         let newState = {}
         let current = ''
         let result = false
+        this.state.history = undefined
 
         // Back button
 
@@ -27,7 +28,7 @@ export default class Expression {
         else if (data === '=') {
             current = this.resolve()
             result = true
-            this.state.history.push(this.state.current)
+            this.state.history = this.history()
         }
 
         // Expression buttons
@@ -60,6 +61,9 @@ export default class Expression {
         else {
             return `${this.state.current}${text}`
         }
+    }
+    history = () => {
+        return this.state.history = this.state.current
     }
     resolve = () => {
         let run = eval
