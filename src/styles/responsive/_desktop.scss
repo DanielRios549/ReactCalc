@@ -1,17 +1,24 @@
 @media (min-width: 900px) {
-    .calc {
-        max-width: 900px !important;
-        margin: 0 auto;
+    #root {
+        grid-template-columns: 1fr 700px 200px 1fr;
+        grid-template-rows: 60px 150px 1fr 30px;
+        grid-template-areas: 
+            "header header header header"
+            ". display display ."
+            ". main history ."
+            "footer footer footer footer"
+        ;
     }
 }
-@media (min-width: 620px) {
-    .calc {
-        padding: 30px;
-        grid-template-columns: auto 200px;
-        grid-template-rows: 20% 80%;
+@media (min-width: 620px) and (max-width: 899px) {
+    #root {
+        grid-template-columns: 1fr 200px;
+        grid-template-rows: 60px 150px 1fr 30px;
         grid-template-areas: 
             "header header"
-            "dial history"
+            "display display"
+            "main history"
+            "footer footer"
         ;
 
         #numbers {

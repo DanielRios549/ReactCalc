@@ -5,22 +5,22 @@ interface Props {
     item: string | undefined
 }
 
-interface State {
+interface List {
     items: string[]
 }
 
 
-export default class History extends React.Component<Props, State> {
+export default class History extends React.Component<Props, List> {
     state = {
-        items: [] as string[]
+        items: []
     }
-    static getDerivedStateFromProps = (props: Props, state: State) => {
+    static getDerivedStateFromProps = (props: Props, state: List) => {
         if (props.item !== undefined) {
             return {
                 items: [...state.items, props.item]
             }
         }
-        return {}
+        return null
     }
     shouldComponentUpdate = () => {
         if (this.props.item !== undefined) {

@@ -1,29 +1,24 @@
-@media (max-width: 619px) {
-    .calc {
-        grid-template-columns: auto;
-        grid-template-rows: 20% auto 70%;
+@media (min-width: 301px) and (max-width: 619px) {
+    #root {
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 150px repeat(2, 1fr) 30px;
         grid-template-areas: 
             "header"
-            "dial"
+            "display"
+            "main"
             "history"
+            "footer"
         ;
-
-        #numbers {
-            align-items: center;
+        .calc {
+            justify-self: center;
         }
     }
 }
 @media (max-width: 300px) {
-    .calc {
-        padding: 5px;
-
-        #display {
-            margin-top: 5px;
-        }
-        #numbers {
-            .line button {
-                width: 25%;
-            }
-        }
+    #display {
+        margin-top: 5px;
+    }
+    .line button {
+        width: 25%;
     }
 }
